@@ -6,7 +6,7 @@ public class Tester{
 
     System.out.println(
 
-    rifath.add(hossain).getValue()
+    rifath.multiply(hossain).getValue()
 
     );
 
