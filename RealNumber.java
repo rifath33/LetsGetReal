@@ -19,7 +19,11 @@ public class RealNumber{
   *Special case: if one is exactly zero, the other must be exactly zero.
   */
   public boolean equals(RealNumber other){
-    return true;
+    if(value == 0)
+    return(other.value == 0);
+
+    else return(false);
+
   }
 
   /*
@@ -29,7 +33,9 @@ public class RealNumber{
   public RealNumber add(RealNumber other){
      //other can be ANY RealNumber, including a RationalNumber
      //or other subclasses of RealNumber (that aren't written yet)
-     return null;
+     double sum = getValue() + other.getValue();
+     RealNumber result = new RealNumber(sum);
+     return result;
   }
 
   /*
