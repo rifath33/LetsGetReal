@@ -23,9 +23,9 @@ public class RealNumber{
     return(other.getValue() == 0);
     else{
       return(
-      ( percentDifference(getValue(), other.getValue()) < 0.001 )
+      ( percentDifference(getValue(), other.getValue()) <= 0.001 )
       &&
-      ( percentDifference(other.getValue(), getValue()) < 0.001 )
+      ( percentDifference(other.getValue(), getValue()) <= 0.001 )
       );
     }
 

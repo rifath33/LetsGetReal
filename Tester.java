@@ -1,12 +1,11 @@
 public class Tester{
   public static void main(String[] args){
 
-    RealNumber rifath = new RealNumber(10);
-    RealNumber hossain = new RealNumber(10.0001);
+    RationalNumber rifath = new RationalNumber(10,9);
 
     System.out.println(
 
-    rifath.equals(hossain)
+    rifath.getValue()
 
     );
 
