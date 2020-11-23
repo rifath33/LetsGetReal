@@ -1,12 +1,12 @@
 public class Tester{
   public static void main(String[] args){
 
-    RealNumber rifath = new RealNumber(9);
-    RealNumber hossain = new RealNumber(10);
+    RealNumber rifath = new RealNumber(10);
+    RealNumber hossain = new RealNumber(5);
 
     System.out.println(
 
-    rifath.multiply(hossain).getValue()
+    rifath.subtract(hossain).getValue()
 
     );
 
