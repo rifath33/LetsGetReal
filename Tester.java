@@ -2,11 +2,11 @@ public class Tester{
   public static void main(String[] args){
 
     RealNumber rifath = new RealNumber(10);
-    RealNumber hossain = new RealNumber(5);
+    RealNumber hossain = new RealNumber(10.0001);
 
     System.out.println(
 
-    rifath.subtract(hossain).getValue()
+    rifath.equals(hossain)
 
     );
 

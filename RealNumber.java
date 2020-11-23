@@ -19,11 +19,24 @@ public class RealNumber{
   *Special case: if one is exactly zero, the other must be exactly zero.
   */
   public boolean equals(RealNumber other){
-    if(value == 0)
-    return(other.value == 0);
+    if(getValue() == 0)
+    return(other.getValue() == 0);
+    else{
+      return(
+      ( percentDifference(getValue(), other.getValue()) < 0.001 )
+      &&
+      ( percentDifference(other.getValue(), getValue()) < 0.001 )
+      );
+    }
 
-    else return(false);
+  }
 
+  /*
+  *percentDifference of a as initial and b as final
+  */
+  public double percentDifference(double a, double b){
+    double result = ( (b-a)/Math.abs(a) ) * 100 ;
+    return result;
   }
 
   /*
@@ -67,4 +80,5 @@ public class RealNumber{
     RealNumber result = new RealNumber(difference);
     return result;
   }
+
 }
