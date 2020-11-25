@@ -126,6 +126,15 @@ public class RationalNumber extends RealNumber
     return result;
   }
 
+  public RationalNumber multiply(int a){
+    RationalNumber result = new RationalNumber
+    (getNumerator() * a
+    ,
+    getDenominator() * a
+    );
+    return result;
+  }
+
   /**
   *Return a new RationalNumber that is the this divided by the other
   */
@@ -138,8 +147,19 @@ public class RationalNumber extends RealNumber
   *Return a new RationalNumber that is the sum of this and the other
   */
   public RationalNumber add(RationalNumber other){
-    return null;
+    int factor = gcd(getDenominator(),other.getDenominator());
+    RationalNumber result = new RationalNumber(
+
+    getNumerator() * other.getDenominator() +
+    other.getNumerator() * getDenominator()
+    ,
+    getDenominator() * other.getDenominator()
+
+    );
+    result.reduce();
+    return result;
   }
+  
   /**
   *Return a new RationalNumber that this minus the other
   */
