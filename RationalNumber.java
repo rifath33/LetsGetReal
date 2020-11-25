@@ -130,7 +130,7 @@ public class RationalNumber extends RealNumber
     RationalNumber result = new RationalNumber
     (getNumerator() * a
     ,
-    getDenominator() * a
+    getDenominator()
     );
     return result;
   }
@@ -147,7 +147,6 @@ public class RationalNumber extends RealNumber
   *Return a new RationalNumber that is the sum of this and the other
   */
   public RationalNumber add(RationalNumber other){
-    int factor = gcd(getDenominator(),other.getDenominator());
     RationalNumber result = new RationalNumber(
 
     getNumerator() * other.getDenominator() +
@@ -159,11 +158,12 @@ public class RationalNumber extends RealNumber
     result.reduce();
     return result;
   }
-  
+
   /**
   *Return a new RationalNumber that this minus the other
   */
   public RationalNumber subtract(RationalNumber other){
-    return null;
+    return(add(other.multiply(-1)));
   }
+
 }
