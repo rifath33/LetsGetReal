@@ -6,7 +6,7 @@ public class Tester{
 
     System.out.println(
 
-    rifath.toString()
+    rifath.gcd(210,45)
 
     );
 

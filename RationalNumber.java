@@ -71,10 +71,32 @@ public class RationalNumber extends RealNumber
   *@param b the second integer
   *@return the value of the GCD
   */
-  private static int gcd(int a, int b){
-    /*use euclids method or a better one*/
+  public static int gcd(int a, int b){
+    /*use euclids method or a better one
     http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html
-    return 0;
+    */
+    // If a<b, exchange a and b.
+    // Divide a by b and get the remainder, r. If r=0, report b as the GCD of
+    // a and b.
+    // Replace a by b and replace b by r. Return to the previous step.
+
+    if(a < b){
+      int memory = a;
+      a = b;
+      b = memory;
+    }
+
+    if( a % b ==0)
+    return b;
+    else{
+      while( (b!= 0) && (a % b !=0) ){
+      int memory = a;
+      a = b;
+      b = memory % b;
+    }
+    return b;
+    }
+
   }
 
   /**
