@@ -130,7 +130,8 @@ public class RationalNumber extends RealNumber
   *Return a new RationalNumber that is the this divided by the other
   */
   public RationalNumber divide(RationalNumber other){
-    return null;
+    RationalNumber result = multiply(other.reciprocal());
+    return result;
   }
 
   /**
