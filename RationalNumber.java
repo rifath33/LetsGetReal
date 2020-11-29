@@ -8,7 +8,7 @@ public class RationalNumber extends RealNumber
   *@param deno the denominator
   */
   public RationalNumber(int nume, int deno){
-    super(0.0);//this value is ignored!
+    super(0.0);
     if(deno !=0){
       numerator = nume;
       denominator = deno;
@@ -17,10 +17,14 @@ public class RationalNumber extends RealNumber
       numerator = 0;
       denominator = 1;
     }
-
+    reduce();
   }
 
   public double getValue(){
+    if(denominator == 0){
+    numerator = 0;
+    denominator = 1;
+  }
     return numerator/(double)denominator;
   }
 
@@ -28,12 +32,20 @@ public class RationalNumber extends RealNumber
   *@return the numerator
   */
   public int getNumerator(){
+    if(denominator == 0){
+    numerator = 0;
+    denominator = 1;
+  }
     return numerator;
   }
   /**
   *@return the denominator
   */
   public int getDenominator(){
+    if(denominator == 0){
+    numerator = 0;
+    denominator = 1;
+  }
     return denominator;
   }
   /**
@@ -59,6 +71,7 @@ public class RationalNumber extends RealNumber
   *@return the value expressed as "3/4" or "8/3"
   */
   public String toString(){
+    reduce();
 
     if(getDenominator() > 0)
     return(
@@ -94,16 +107,20 @@ public class RationalNumber extends RealNumber
       b = memory;
     }
 
-    if( a % b ==0)
-    return b;
-    else{
-      while( (b!= 0) && (a % b !=0) ){
-      int memory = a;
-      a = b;
-      b = memory % b;
+    if(b!=0)
+    {
+      if( a % b == 0)
+      return b;
+      else{
+        while( (b!= 0) && (a % b !=0) ){
+        int memory = a;
+        a = b;
+        b = memory % b;
+      }
+      return b;
+      }
     }
-    return b;
-    }
+    else return 23889; //ERR0R
 
   }
 
@@ -115,6 +132,7 @@ public class RationalNumber extends RealNumber
   private void reduce(){
 
     int divisor = gcd(numerator, denominator);
+
     numerator=numerator/divisor;
     denominator=denominator/divisor;
 
