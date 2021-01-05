@@ -14,13 +14,6 @@ public class RealNumber extends Number{
   }
   //---------ONLY EDIT BELOW THIS LINE------------
 
-  /*
-  *percentDifference of a as initial and b as final
-  */
-  public double percentDifference(double a, double b){
-    double result = ( (b-a)/Math.abs(a) ) * 100 ;
-    return result;
-  }
 
   /*
   *Return a new RealNumber that has the value of:
